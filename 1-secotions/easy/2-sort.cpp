@@ -1,8 +1,4 @@
-// read two integers x and y
-// is both is odd pring x*y
-// is both is even pring x/y
-// if x is even and y is odd pring x+y
-// if x is odd and y is even pring x-y
+// read three integers and sort them 
 
 #include <iostream>
 using namespace std;
