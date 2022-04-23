@@ -5,17 +5,17 @@
 using namespace std;
 int main()
 {
-    int x;
+    int row;
     cout << "Enter the integer :";
-    cin >> x;
-    while(x>0){
-        int n=1;
-        while (n<=x)
+    cin >> row;
+    while(row>0){
+        int col=1;
+        while (col<=row)
         {
             cout<<"*";
-            n++;
+            col++;
         }cout<<endl;
-        x--;
+        row--;
         
     }
 
