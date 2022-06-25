@@ -32,13 +32,13 @@ int main()
         if (arr[i] == min)
         {
             // cout<<arr[i]<<" "<<min; 
-            arr[i] == max;
+            arr[i] = max;
         }
         else if (arr[i] == max)
         {
             // cout << arr[i] << " " << max;
 
-            arr[i] == min;
+            arr[i] = min;
         }
     }
 
