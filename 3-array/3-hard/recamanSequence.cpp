@@ -8,12 +8,12 @@ int main()
     int n;
     cout << "Enter number of index which you want to get its value in recaman sequence : ";
     cin >> n;
-    int arr[n];
+    int arr[200];
     arr[0] = 0;
     int value;
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <=n; i++)
     {
-        value = arr[i - 1] - i - 1;
+        value = arr[i - 1] - (i-1) - 1;
         bool Appeared = false;
         // check if the value appeared in the prevous numbers or not
         for (int j = i - 1; j >= 0; j--)
@@ -22,8 +22,7 @@ int main()
             {
                 Appeared = true;
                 break;
-            }
-            
+            }  
         }
         if (!Appeared && value > 0)
         {
@@ -31,10 +30,10 @@ int main()
         }
         else
         {
-            arr[i] = arr[i - 1] + i + 1;
+            arr[i] = arr[i - 1] + (i-1)+ 1;
         }
     }
-    cout<<"the value of the index is "<<arr[n-1];
+    cout<<"the value of the index is "<<arr[n];
 
     return 0;
 }
