@@ -18,17 +18,17 @@ int main()
         cin>>arr[i];
     }
     // loop for the array items to splite the sub array 
-    for (size_t i = 0; i <n-k; i++)
+    for (size_t i = 0; i <n-k+1; i++)
     {
         sum=0;
      for (size_t j= i; j <k+i; j++)
     {
         sum+=arr[j];
     }
-    if(sum>oldSum){
+    if(sum>=oldSum){
         oldSum=sum;
         firstIndex=i;
-        lastIndex=k+i; 
+        lastIndex=k+i-1; 
     }
     }
     cout<<"the max sum is "<<oldSum<< " and start at index "<<firstIndex<< "and ended at index "<<lastIndex;
