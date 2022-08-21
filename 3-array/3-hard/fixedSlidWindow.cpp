@@ -5,24 +5,35 @@
 using namespace std;
 int main()
 {
+    int sum=0,oldSum=-10000,firstIndex,lastIndex;
     int k,n;
-    int sum,maxSum,firstIndex,lastIndex;
-    cout << "Enter number of index which you want to get its value in recaman sequence : ";
-    cin>>k;
-    cin >> n;
+    cout <<"please Enter the length of number of the array and the length of sub array"<<endl;
+    cin>>n>>k;
     int arr[n];
-    cout << "Enter the Arrray value ";
-    for (int i = 0; i < n; i++)
+    cout<< "Enter the array items"<<endl;
+
+    // Enter the items of the Array
+    for (size_t i = 0; i <n; i++)
     {
-        cin>>arr[i]
+        cin>>arr[i];
     }
-    for (int i = 0; i < n-k; i++)
+    // loop for the array items to splite the sub array 
+    for (size_t i = 0; i <n-k; i++)
     {
-        for (int j = i; j < i+k; j++)
-        {
-            sum+=arr[j]
-        }
+        sum=0;
+     for (size_t j= i; j <k+i; j++)
+    {
+        sum+=arr[j];
     }
+    if(sum>oldSum){
+        oldSum=sum;
+        firstIndex=i;
+        lastIndex=k+i; 
+    }
+    }
+    cout<<"the max sum is "<<oldSum<< " and start at index "<<firstIndex<< "and ended at index "<<lastIndex;
+
+    
 
     return 0;
 }
