@@ -37,17 +37,29 @@ int main()
             cout << "Employees in my company" << endl;
             for (size_t i = 0; i < employeeNumber; i++)
             {
+                if(!(age[i]==-1)){
                 cout << "employee Number" << i + 1 << endl;
                 cout << "Name : " << name[i] << endl;
                 cout << "Age: " << age[i] << endl;
                 cout << "Salary: " << salary[i] << endl;
                 cout << "*****************************" << endl;
+                }
             }
         }
         else if (choice == 3)
         {
-            // first get the index for this emplyee
-            // then delete it;
+            // use laze delete to delete by put age =-1
+            int start,end;
+            cout << "please Enter the range of ages you want to delete from your database : ";
+            cin>>end>>start;
+            for (size_t i = 0; i < employeeNumber; i++)
+            {
+                if (age[i] <= end && age[i] >= start)
+                {
+                    age[i]=-1;
+                }
+
+            }
         }
         else if (choice == 4)
         {
@@ -78,6 +90,10 @@ int main()
         {
             keepGoing = false;
             cout << "*****************************" << endl;
+        }else{
+            cout<<"you should Enter a valid number to do some thing"<<endl;
+            cout << "*****************************" << endl;
+            continue;
         }
     }
     return 0;
