@@ -17,6 +17,12 @@ int main()
         {
             cout << "Item " << i << " " << j << " is : ";
             cin >> arr[i][j];
+
+            // you should check if the number is prime or not here
+            // isPrimeArray[100][100]={0}
+            // if(the number is prime ){
+            // isPrimeArray[i][j]=1; 
+            // }
         }
     }
     int query;
@@ -42,7 +48,9 @@ int main()
             for (int j = firstColum; j <lastColum; j++)
             {
                 // check for prime or not
-                
+                // get is prime or not from is prime array and
+                // sum++
+
             }
         }
     }
