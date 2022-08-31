@@ -60,17 +60,41 @@ int main()
             }
             cout << endl;
         }
+        // check for if this user win or not
+        int winCount=0;
+        // check if he win by completing all row
+
+        for (size_t i = 0; i < ArrayDimensions; i++)
+        {
+            if(array[d1][i]==symbole){
+                winCount++;
+                continue;
+            }
+            break;
+        }
+        if(winCount==ArrayDimensions){
+            isWin=true;
+            cout<<"the user : "<<symbole<<"is win!! GAME OVER"<<endl;
+        }
+        // check if he win by completing all colume
+        winCount=0; // you must make wincount =0
+        for (size_t i = 0; i < ArrayDimensions; i++)
+        {
+            if (array[i][d2] == symbole)
+            {
+                winCount++;
+                continue;
+            }
+            break;
+        }
+        if (winCount == ArrayDimensions)
+        {
+            isWin = true;
+            cout << "the user : " << symbole << "is win!! GAME OVER" << endl;
+        }
     }
 
-    // // print the array value
-    // for (size_t i = 0; i < ArrayDimensions; i++)
-    // {
-    //     for (size_t j = 0; j < ArrayDimensions; j++)
-    //     {
-    //         cout << array[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
+    
 
     return 0;
 }
