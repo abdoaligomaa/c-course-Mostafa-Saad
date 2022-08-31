@@ -90,7 +90,7 @@ int main()
         if (winCount == ArrayDimensions)
         {
             isWin = true;
-            cout << "the user : " << symbole << "is win!! GAME OVER" << endl;
+            cout << "the user : " << symbole << " is win!! GAME OVER" << endl;
         }
     }
 
