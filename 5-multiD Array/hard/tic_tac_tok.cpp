@@ -42,11 +42,13 @@ int main()
         }
         // put the symbole into array
         string symbole;
-        if(counter%2==0){
-            symbole="X";
-
-        }else{
-            symbole="O";
+        if (counter % 2 == 0)
+        {
+            symbole = "X";
+        }
+        else
+        {
+            symbole = "O";
         }
         array[d1][d2] = symbole;
         counter++;
@@ -61,23 +63,25 @@ int main()
             cout << endl;
         }
         // check for if this user win or not
-        int winCount=0;
+        int winCount = 0;
         // check if he win by completing all row
 
         for (size_t i = 0; i < ArrayDimensions; i++)
         {
-            if(array[d1][i]==symbole){
+            if (array[d1][i] == symbole)
+            {
                 winCount++;
                 continue;
             }
             break;
         }
-        if(winCount==ArrayDimensions){
-            isWin=true;
-            cout<<"the user : "<<symbole<<"is win!! GAME OVER"<<endl;
+        if (winCount == ArrayDimensions)
+        {
+            isWin = true;
+            cout << "the user : " << symbole << "is win!! GAME OVER" << endl;
         }
         // check if he win by completing all colume
-        winCount=0; // you must make wincount =0
+        winCount = 0; // you must make wincount =0
         for (size_t i = 0; i < ArrayDimensions; i++)
         {
             if (array[i][d2] == symbole)
@@ -92,9 +96,28 @@ int main()
             isWin = true;
             cout << "the user : " << symbole << " is win!! GAME OVER" << endl;
         }
-    }
+        // check if he win by completing all right diagonal
+        // you should check if he is in the diagonal or not by checking d1==d2
+        if (d1 == d2)
+        {
 
-    
+            winCount = 0; // you must make wincount =0
+            for (size_t i = 0; i < ArrayDimensions; i++)
+            {
+                if (array[i][i] == symbole)
+                {
+                    winCount++;
+                    continue;
+                }
+                break;
+            }
+            if (winCount == ArrayDimensions)
+            {
+                isWin = true;
+                cout << "the user : " << symbole << " is win!! GAME OVER" << endl;
+            }
+        }
+    }
 
     return 0;
 }
