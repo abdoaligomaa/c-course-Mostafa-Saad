@@ -117,6 +117,27 @@ int main()
                 cout << "the user : " << symbole << " is win!! GAME OVER" << endl;
             }
         }
+        // check if he win by completing all right diagonal
+        // you should check if he is in the diagonal or not by checking d1==d2
+        if (d1+d2 ==ArrayDimensions-1)
+        {
+
+            winCount = 0; // you must make wincount =0
+            for (size_t i = 0,j=ArrayDimensions-1; i < ArrayDimensions; i++,j--)
+            {
+                if (array[i][j] == symbole)
+                {
+                    winCount++;
+                    continue;
+                }
+                break;
+            }
+            if (winCount == ArrayDimensions)
+            {
+                isWin = true;
+                cout << "the user : " << symbole << " is win!! GAME OVER" << endl;
+            }
+        }
     }
 
     return 0;
