@@ -7,7 +7,7 @@ int main()
 {
     // for choice the dimensions geme you want to play with
     int ArrayDimensions;
-    cout << "please Enter the dimensions of the game you wnat to play :";
+    cout << "please Enter the dimensions of the game you wnat to play (from 3 to 9) :";
     cin >> ArrayDimensions;
     string array[ArrayDimensions][ArrayDimensions];
     // set value to 2d array
@@ -25,9 +25,24 @@ int main()
     // start the game
     while ((ArrayDimensions * ArrayDimensions) > counter && !isWin)
     {
+        // init the symble X or O
+        string symbole;
+        if (counter % 2 == 0)
+        {
+            symbole = "X";
+        }
+        else
+        {
+            symbole = "O";
+        }
         // Enter the direciton
-        cout << "Enter the direction of the choise : ";
+        // the direction should be in 1 base not 0 base to be more readable game
+        cout << "Player : " << symbole << " Please Enter the The Direction :";
         cin >> d1 >> d2;
+
+        // to make the game in 0 base decrease by one
+        d1--;
+        d2--;
 
         // check if the dir which i choise is valid to choise or not
         bool isValidDir = (d1 < ArrayDimensions && d2 < ArrayDimensions && d2 >= 0 && d1 >= 0);
@@ -41,15 +56,7 @@ int main()
             continue;
         }
         // put the symbole into array
-        string symbole;
-        if (counter % 2 == 0)
-        {
-            symbole = "X";
-        }
-        else
-        {
-            symbole = "O";
-        }
+
         array[d1][d2] = symbole;
         counter++;
 
@@ -79,6 +86,8 @@ int main()
         {
             isWin = true;
             cout << "the user : " << symbole << "is win!! GAME OVER" << endl;
+            cout << endl;
+            cout << "**************************************************";
         }
         // check if he win by completing all colume
         winCount = 0; // you must make wincount =0
@@ -95,6 +104,8 @@ int main()
         {
             isWin = true;
             cout << "the user : " << symbole << " is win!! GAME OVER" << endl;
+            cout << endl;
+            cout << "**************************************************";
         }
         // check if he win by completing all right diagonal
         // you should check if he is in the diagonal or not by checking d1==d2
@@ -115,15 +126,17 @@ int main()
             {
                 isWin = true;
                 cout << "the user : " << symbole << " is win!! GAME OVER" << endl;
+                cout << endl;
+                cout << "**************************************************";
             }
         }
         // check if he win by completing all right diagonal
         // you should check if he is in the diagonal or not by checking d1==d2
-        if (d1+d2 ==ArrayDimensions-1)
+        if (d1 + d2 == ArrayDimensions - 1)
         {
 
             winCount = 0; // you must make wincount =0
-            for (size_t i = 0,j=ArrayDimensions-1; i < ArrayDimensions; i++,j--)
+            for (size_t i = 0, j = ArrayDimensions - 1; i < ArrayDimensions; i++, j--)
             {
                 if (array[i][j] == symbole)
                 {
@@ -136,6 +149,8 @@ int main()
             {
                 isWin = true;
                 cout << "the user : " << symbole << " is win!! GAME OVER" << endl;
+                cout << endl;
+                cout << "**************************************************";
             }
         }
     }
